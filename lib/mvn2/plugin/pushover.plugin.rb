@@ -12,9 +12,9 @@ class PushoverPlugin
     if options[:pushover_token]
       path = File.basename(Dir.getwd)
       if options[:pushover_lock_check]
-        rval = `python -c 'import sys,Quartz; d=Quartz.CGSessionCopyCurrentDictionary(); print d.get("CGSSessionScreenIsLocked", 0)'`.chomp.to_s
-        if %w(0 1).include?(rval)
-          unlocked = rval == '0'
+        rval = `python -c 'import sys,Quartz; d=Quartz.CGSessionCopyCurrentDictionary(); print d.get("CGSSessionScreenIsLocked", 0)'`.chomp.to_s.downcase
+        if %w(0 1 true false).include?(rval)
+          unlocked = %w(0 false).include?(rval)
         else
           unlocked = false
           puts <<-EOS
