@@ -29,6 +29,8 @@ EOS
       else
         unlocked = false
       end
+      failures = Plugins.get_var :failures
+      message_text = "#{message_text} (#{failures} failed)" if failures && failures > 0
       Pushover.notification(message: message_text, title: path, user: options[:pushover_token], token: 'aV6NxV11TLQJyVfmRvk1Rrv3xoWnGy') unless unlocked
     end
   }
