@@ -1,6 +1,6 @@
 require 'everyday-plugins'
 include EverydayPlugins
-require 'pushover'
+require 'rushover'
 class PushoverPlugin
   extend Plugin
   extend PluginType
@@ -31,7 +31,7 @@ EOS
       end
       failures = Plugins.get_var :failures
       message_text = "#{message_text} (#{failures} failed)" if failures && failures > 0
-      Pushover.notification(message: message_text, title: path, user: options[:pushover_token], token: 'aV6NxV11TLQJyVfmRvk1Rrv3xoWnGy') unless unlocked
+      Rushover::Client.new('aV6NxV11TLQJyVfmRvk1Rrv3xoWnGy').notify(options[:pushover_token], message_text, title: path) unless unlocked
     end
   }
 end

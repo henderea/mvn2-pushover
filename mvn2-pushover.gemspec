@@ -25,5 +25,5 @@ Gem::Specification.new do |spec|
 
   spec.add_dependency 'everyday-cli-utils', '~> 1.8', '>= 1.8.7.1'
   spec.add_dependency 'everyday-plugins', '~> 1.2', '>= 1.2.1'
-  spec.add_dependency 'pushover', '~> 1.0', '>= 1.0.4'
+  spec.add_dependency 'rushover', '~> 0.3'
 end
