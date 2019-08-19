@@ -20,10 +20,10 @@ Gem::Specification.new do |spec|
 
   spec.required_ruby_version = '>= 1.9.3'
 
-  spec.add_development_dependency 'bundler'
-  spec.add_development_dependency 'rake'
+  spec.add_development_dependency 'bundler', '~> 2.0'
+  spec.add_development_dependency 'rake', '~> 12.3'
 
-  spec.add_dependency 'everyday-cli-utils', '~> 1.8', '>= 1.8.7.1'
-  spec.add_dependency 'everyday-plugins', '~> 1.2', '>= 1.2.1'
+  spec.add_dependency 'everyday-cli-utils', '~> 1.8', '>= 1.8.7.2'
+  spec.add_dependency 'everyday-plugins', '~> 1.2', '>= 1.2.2'
   spec.add_dependency 'rushover', '~> 0.3'
 end
